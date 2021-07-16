@@ -1,0 +1,3 @@
+Github => https://github.com/SENG474-TEAM-PROJECT/Reimplement-SurvivalNet
+Paper => https://www.nature.com/articles/s41598-017-11817-6
+FinalReport => https://docs.google.com/document/d/1DJjFTXfu1D3Z6cQyevqmgqGsGDCfHev6FhlfNAZPq0I/edit?usp=sharing
