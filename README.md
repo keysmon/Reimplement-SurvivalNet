@@ -10,6 +10,18 @@ We will try to reimplement the SurvivalNet project.  We will use data from the T
 
 This project includes a virtual environment of the 2nd generation of python. All testing should be done in the virtual environment to maintain consistency
 
+To create the virtual enviroment, make sure your pip is also the generation
+check pip version by
+>pip -V
+install virtualenv
+>pip install virtualenv
+
+To init the virtual enviroment
+>virtualenv Integrator
+>source ./Integrator/bin/activate
+>pip install requests
+>pip install firebrowse
+
 To activate the virtual enviroment, run
 >source ./Integrator/bin/activate
 
