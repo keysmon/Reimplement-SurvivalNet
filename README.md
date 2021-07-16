@@ -22,7 +22,9 @@ To run the TCGA Integrator and download the default dataset, run
 
 To run the TCGA Integrator with specific disease name, run
 >python BuildData.py [Disease_name1] [Disease_name2] [Disease_name3] ... 
+
 e.g
+
 >python BuildData.py GBM KIPAN LGG
 
 Github cannot store dataset of that size, so it's encouraged to run your own integrator and store the data at a local location
