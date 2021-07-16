@@ -25,7 +25,8 @@ To init the virtual enviroment
 >virtualenv Integrator
 >source ./Integrator/bin/activate
 >pip install requests
->pip install firebrowse
+>pip install numpy
+>pip install scipy
 ```
 
 To activate the virtual enviroment, run
