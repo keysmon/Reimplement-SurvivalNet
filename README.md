@@ -1,5 +1,6 @@
 # Reimplement-SurvivalNet
 
+<<<<<<< HEAD
 We will try to reimplement the SurvivalNet project.  We will use data from the TCGA dataset, namely
 
 | DiseaseName	| Code 		| 
