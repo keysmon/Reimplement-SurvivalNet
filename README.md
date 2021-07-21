@@ -5,7 +5,7 @@ We will try to reimplement the SurvivalNet project.  We will use data from the T
 | DiseaseName	| Code 		| 
 | -------------	|-------------:| 
 | Brain(pan-glioma) 	| LGG/GBM	| 
-| Breast 		| BRCA 		|
+| LUNG 		| LUAD 		|
 | Pan-kidney	| KIPAN		|
 
 This project includes a virtual environment of the 2nd generation of python. All testing should be done in the virtual environment to maintain consistency
