@@ -1,9 +1,14 @@
 from scipy.io import loadmat
 import pandas as pd
+import sys
 
 
 def mat2csv(file_mat, index=False):
-    mat = loadmat(file_mat)
+    try:
+        mat = loadmat(file_mat)
+    except:
+        sys.stderr.write("convert.py -> Fatal Error: Cannot open file\n")
+        exit(1)
 
     data = {}
     data['col_id'] = []
@@ -18,7 +23,7 @@ def mat2csv(file_mat, index=False):
                 data['AvailableClinical'].append(1)
             else:
                 data['AvailableClinical'].append(0)
-    
+
     data['AvailableCNV'] = []
     for row in mat['AvailableCNV']:
         for col_id, value in enumerate(row):
@@ -86,9 +91,12 @@ def mat2csv(file_mat, index=False):
     df.to_csv("Symbols.csv", index=index)
 
 def main():
-    x = raw_input("Please enter mat file name: ")
-    mat2csv(x)
-    
+    if(len(sys.argv) != 2):
+        sys.stderr.write("convert.py -> Fatal Error: Missing input .mat file\n")
+        exit(1)
+    file = sys.argv[1]
+    mat2csv(file)
+
 
 
 if __name__ == "__main__":
