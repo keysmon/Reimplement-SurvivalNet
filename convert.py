@@ -1,6 +1,6 @@
 from scipy.io import loadmat
 import pandas as pd
-
+import numpy as np
 
 def mat2csv(file_mat, index=False):
     mat = loadmat(file_mat)
@@ -56,7 +56,7 @@ def mat2csv(file_mat, index=False):
 
 
     df = pd.DataFrame(data)
-    df.to_csv("Survival.csv", index=index)
+
 
     data1 = {}
     for col_id in range(len(mat['Features'][0])):
@@ -66,8 +66,9 @@ def mat2csv(file_mat, index=False):
         for col_id, value in enumerate(row):
             data1[col_id].append(value)
 
-    df = pd.DataFrame(data1)
-    df.to_csv('Features.csv', index=index)
+    df1 = pd.DataFrame(data1)
+
+
 
     data2 = {}
     data2['col_id'] = []
@@ -82,8 +83,30 @@ def mat2csv(file_mat, index=False):
     for row in mat['SymbolTypes']:
         data2["SymbolTypes"].append(row)
 
-    df = pd.DataFrame(data2)
-    df.to_csv("Symbols.csv", index=index)
+    #print(data2["Symbols"])
+    df2 = pd.DataFrame(data2)
+    
+
+    df3 = np.concatenate((df2, df1), axis=1)
+    df3 = pd.DataFrame(df3)
+    #df3 = pd.DataFrame(data1, columns = data2["Symbols"])
+    df3 = df3.T
+    df3.drop(df3.index[2], inplace=True)
+    df3.columns = df3.iloc[1]
+    df3 = df3[2:]
+
+    df3['Survival'] = df['Survival']
+    df3['AvailableClinical'] = df['AvailableClinical']
+    df3['AvailableCNV'] = df['AvailableCNV']
+    df3['AvailablemRNA'] = df['AvailablemRNA']
+    df3['AvailableProtein'] = df['AvailableProtein']
+    df3['Censored'] = df['Censored']
+    df3['Survival'] = df['Survival']
+    
+    #print(df3.shape)
+    df3.to_csv("Survival.csv", index=index)
+
+    
 
 def main():
     x = raw_input("Please enter mat file name: ")
