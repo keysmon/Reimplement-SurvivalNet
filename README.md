@@ -1,7 +1,7 @@
 # Reimplement-SurvivalNet
 
-## The convert.py will load .mat format file and output .csv format files.
-## Please make sure that the format of the mat input file is correct
+The convert.py will load .mat format file and output .csv format files.
+### Please make sure that the format of the mat input file is correct
 
 ### The expecting output of the convert.py will be one file named Survival.csv
 1. Each row represents one patient.
