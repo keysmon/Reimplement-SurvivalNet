@@ -27,6 +27,7 @@ To init the virtual enviroment
 >pip install requests
 >pip install numpy
 >pip install scipy
+>pip install pandas
 ```
 
 To activate the virtual enviroment, run
